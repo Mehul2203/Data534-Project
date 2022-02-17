@@ -1,0 +1,11 @@
+Package: githubapistats
+Type: Package
+Title: GitHub API Stats (Title Case)
+Version: 0.1.0
+Author: Mayukha Bheemavarapu, Navdeep Singh Saini, Mehul Bhargava
+Maintainer: The package maintainer <yourself@somewhere.net>
+Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
+License: MIT License
+Encoding: UTF-8
+NeedsCompilation: no
+Packaged: 2022-02-17 03:02:22 UTC; mayukha
