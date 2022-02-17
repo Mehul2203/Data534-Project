@@ -91,4 +91,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **15th Feb** - Made the script dynamic and it can incorporate any repo. Performed exception handling and documented parts of the code
    
    * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
+
+
+[![CircleCI](https://circleci.com/gh/navdeep94/Data534-Project/tree/main.svg?style=svg)](https://circleci.com/gh/navdeep94/Data534-Project/tree/main)
  
