@@ -61,7 +61,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
 
 ## Tasks Done
 
-**Navdeep Singh Saini**
+**Team Member 1 - Navdeep Singh Saini**
 
    * **13th Feb** - Reasearched on the API on which the R wrapper package can be created in R and came to the conclusion that Github API should be taken into consideration
    
@@ -71,7 +71,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    
    * **16th Feb** - Worked on the Git Documentation of the R wrapper package
 
-**Mehul Bhargava**
+**Team Member 2 - Mehul Bhargava**
     
    * **13th Feb** - 
    
@@ -82,7 +82,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **16th Feb** -
 
 
-**Mayukha Bheemavarapu**
+**Team Member 3 - Mayukha Bheemavarapu**
 
    * **13th Feb** - 
    
