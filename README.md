@@ -13,12 +13,12 @@ This is the git hub repo for our project based on Github API R wrapper functions
 
 **Libraries Used**
 
-   1. httr
-   2. jsonlite
-   3. tidyverse
-   4. patchwork
-   5. anytime
-   6. testthat
+   * httr
+   * jsonlite
+   * tidyverse
+   * patchwork
+   * anytime
+   * testthat
 
 **Lecture:** M-W 9:30-11:00 on Canvas Zoom link (and in person once permitted) <br>
 **Lab:** Thursday 1:30 p.m. to 3:30 p.m. <br>
