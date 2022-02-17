@@ -77,7 +77,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    
    * **14th Feb** - Coding for analysis of data. Extracting the data from the API in a proper format and converted into dataframes. helped creating the functions for the user requirements for commits and a combined functions. 
    
-   * **15th Feb** - 
+   * **15th Feb** - Created functions for visualizattions for commits for each user and for a combined visualization. Did faceting for the combined visualization. 
    
    * **16th Feb** -
 
