@@ -20,6 +20,23 @@ This is the git hub repo for our project based on Github API R wrapper functions
    * anytime
    * testthat
 
+**Functions Used**
+
+   * git_stats - This is the main function which returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user. In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits, deletions of the github user for the requested repository by the end user.
+
+Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
+
+   * adds_per_user - It is the function which returns the stats of user in terms of additions for the requested repository by the end user. 
+ 
+Parameter: current_user -> the user name for which user wants to analyze the data.
+ 
+   * deletes_per_user - It is the function which returns the stats of user in terms of deletions for the requested repository by the end user. 
+
+Parameter: current_user -> the user name for which user wants to analyze the data
+   * patchwork
+   * anytime
+   * testthat
+
 **Lecture:** M-W 9:30-11:00 on Canvas Zoom link (and in person once permitted) <br>
 **Lab:** Thursday 1:30 p.m. to 3:30 p.m. <br>
 **Office Hours** Thursday 3:30-4:30 on Canvas Zoom link (and in person once permitted) <br>
