@@ -25,6 +25,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **git_stats** - This is the main function which returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user. In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits, deletions of the github user for the requested repository by the end user.
 
       Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
+      Ex: git_stats('numpy/numpy')
 
    * **adds_per_user** - It is the function which returns the stats of user in terms of additions for the requested repository by the end user. 
  
