@@ -26,35 +26,35 @@ This is the git hub repo for our project based on Github API R wrapper functions
 
       Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
 
-   * adds_per_user - It is the function which returns the stats of user in terms of additions for the requested repository by the end user. 
+   * **adds_per_user** - It is the function which returns the stats of user in terms of additions for the requested repository by the end user. 
  
       Parameter: current_user -> the user name for which user wants to analyze the data.
  
-   * deletes_per_user - It is the function which returns the stats of user in terms of deletions for the requested repository by the end user. 
+   * **deletes_per_user** - It is the function which returns the stats of user in terms of deletions for the requested repository by the end user. 
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-   * commits_per_user - It is the function which returns the stats of user in terms of commits for the requested repository by the end user. 
+   * **commits_per_user** - It is the function which returns the stats of user in terms of commits for the requested repository by the end user. 
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-   * everything_per_user - It is the function which returns the stats of user in terms of additions,deletions,commits for the requested repository by the end user. 
+   * **everything_per_user** - It is the function which returns the stats of user in terms of additions,deletions,commits for the requested repository by the end user. 
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-   * adds_per_user_viz - This shows visualization/trends/time series plots of additions of the github user for the requested repository by the end user.
+   * **adds_per_user_viz** - This shows visualization/trends/time series plots of additions of the github user for the requested repository by the end user.
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-   * deletes_per_user_viz - This shows visualization/trends/time series plots of deletions of the github user for the requested repository by the end user.
+   * **deletes_per_user_viz** - This shows visualization/trends/time series plots of deletions of the github user for the requested repository by the end user.
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-    * commits_per_user_viz - This shows visualization/trends/time series plots of commits of the github user for the requested repository by the end user.
+   * **commits_per_user_viz** - This shows visualization/trends/time series plots of commits of the github user for the requested repository by the end user.
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
-    * eveyrthing_per_user_viz - This shows visualization/trends/time series plots of additions,deletions,commits of the github user for the requested repository by the end user.
+   * **eveyrthing_per_user_viz** - This shows visualization/trends/time series plots of additions,deletions,commits of the github user for the requested repository by the end user.
 
       Parameter: current_user -> the user name for which user wants to analyze the data
       
