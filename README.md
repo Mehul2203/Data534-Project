@@ -73,7 +73,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
 
 **Team Member 2 - Mehul Bhargava**
     
-   * **13th Feb** - 
+   * **13th Feb** - Worked on API to search for a good API, accessing it, analyzed itand finalizing it. 
    
    * **14th Feb** - 
    
