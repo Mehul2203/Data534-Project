@@ -25,8 +25,8 @@ git_stats <- function(repo_name){
     stop()}
   flush.console()
   data = jsonlite::fromJSON(rawToChar(res$content))
-  #loginname<-'mattip'
-  loginname <- readline(prompt="Enter login name: ")
+  loginname<-'mattip'
+  #loginname <- readline(prompt="Enter login name: ")
   author<-data$author
 
   if ((loginname %in%  author$login) != TRUE) {
