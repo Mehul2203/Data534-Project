@@ -96,6 +96,6 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
 
 
-![image](https://user-images.githubusercontent.com/87165579/154630161-f077e7e5-c1fe-4450-a015-6fc8b2db5e33.png)
+[![R-CMD-check](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml/badge.svg)](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml)
 
  
