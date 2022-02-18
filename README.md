@@ -71,6 +71,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    
    * **16th Feb** - Worked on the Git Documentation of the R wrapper package
    * **17th Feb** - Worked on package testing using Circle CI and later on Github Action, after many failures we were able to run it successfully involving many changes in the configuration and even code changes.
+   * **18th Feb** - Worked on rebuilding the package locally after making the changes by the vignette by other team mate and pushing it to github.
 
 **Team Member 2 - Mehul Bhargava**
     
@@ -98,4 +99,4 @@ This is the git hub repo for our project based on Github API R wrapper package i
 
 [![R-CMD-check](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml/badge.svg)](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml)
 
- 
+ ![image](https://user-images.githubusercontent.com/87165579/154769140-195432db-ad62-413a-99e5-921784a1fa27.png)
