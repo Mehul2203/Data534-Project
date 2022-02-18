@@ -16,5 +16,5 @@ knitr::opts_chunk$set(
 
 ```{r setup}
 library(githubapistats)
-#git_stats('numpy/numpy')
+git_stats('numpy/numpy')
 ```
