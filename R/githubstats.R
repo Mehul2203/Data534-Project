@@ -5,7 +5,7 @@
 #' deletions of the github user for the requested repository by the end user.
 #' @param repo_name A repo
 #'
-#' @return jbug.kjblk
+#' @return dataframe and visualization of thr above mentioned based on user input
 #'
 #' @export
 #'
