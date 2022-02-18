@@ -129,8 +129,8 @@ git_stats <- function(repo_name){
   }
 
   while(1){
-    #user_stats_choice<-'1'
-    user_stats_choice <- readline(prompt="Enter which stats you are looking for the user(type from the following options - \n 1. Additions \n 2. Deletions \n 3. Commits \n 4.All \n 5. None): \n ")
+    user_stats_choice<-'1'
+    #user_stats_choice <- readline(prompt="Enter which stats you are looking for the user(type from the following options - \n 1. Additions \n 2. Deletions \n 3. Commits \n 4.All \n 5. None): \n ")
 
     if(user_stats_choice  == "1"){
       df<-adds_per_user(current_user)
