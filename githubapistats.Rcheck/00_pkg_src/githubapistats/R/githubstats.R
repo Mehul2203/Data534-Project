@@ -6,7 +6,7 @@ git_stats <- function(repo_name){
   #' deletions of the github user for the requested repository by the end user.
   #' Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
   #' @param repo_name
-  #' @importFrom httr GET
+  #' @description description
   #'
   #' @export
   #library(httr)

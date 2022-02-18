@@ -17,10 +17,13 @@ Type 'q()' to quit R.
 
 > library(testthat)
 > library(githubapistats)
+Warning messages:
+1: replacing previous import 'testthat::test_file' by 'devtools::test_file' when loading 'githubapistats' 
+2: replacing previous import 'testthat::matches' by 'dplyr::matches' when loading 'githubapistats' 
 > 
 > test_check("githubapistats")
 [ FAIL 0 | WARN 0 | SKIP 0 | PASS 1 ]
 > 
 > proc.time()
    user  system elapsed 
-  0.337   0.059   0.380 
+  1.202   0.107   1.315 

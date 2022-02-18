@@ -10,8 +10,5 @@ Parameter: repo_name -> it is the repository name for which the user wants to an
 git_stats(repo_name)
 }
 \description{
-Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
-In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
-deletions of the github user for the requested repository by the end user.
-Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
+description
 }
