@@ -31,4 +31,6 @@ library(githubapistats)
 5. Enter '1' to get Additions, '2' to get Deletions, '3' for Commits, '4' to get data for all the three (Additions, Deletions, Commits) and '5' for None.    
 6. Press 'yes' to look at the visualization as well and 'no' if otherwise.      
 
-![returning stats](/Screenshots/screenshot.png)
+```{r setup}
+knitr::include_graphics(/Screenshots/screenshot.png)
+```
