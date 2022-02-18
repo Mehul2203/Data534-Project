@@ -3,7 +3,7 @@
 #' @description stats of user in terms of additions, commits, deletions for the requested repository by the end user.
 #' In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
 #' deletions of the github user for the requested repository by the end user.
-#' @param repo_name
+#' @param repo_name A repo
 #'
 #' @return jbug.kjblk
 #'
