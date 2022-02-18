@@ -1,1 +1,4 @@
+importFrom("utils", "flush.console", "head")
 exportPattern("^[[:alpha:]]+")
+
+

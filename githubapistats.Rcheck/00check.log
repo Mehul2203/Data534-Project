@@ -16,17 +16,17 @@
 * checking for portable file names ... OK
 * checking for sufficient/correct file permissions ... OK
 * checking serialization versions ... OK
-* checking whether package ‘githubapistats’ can be installed ... WARNING
-Found the following significant warnings:
-  Warning: package ‘jsonlite’ was built under R version 4.1.2
-See ‘/Users/mayukha/UBC Material and Labs/Data 534/Data534-Project/githubapistats.Rcheck/00install.out’ for details.
+* checking whether package ‘githubapistats’ can be installed ... OK
 * checking installed package size ... OK
 * checking package directory ... OK
 * checking for future file timestamps ... OK
 * checking DESCRIPTION meta-information ... NOTE
 License components which are templates and need '+ file LICENSE':
   MIT License
-* checking top-level files ... OK
+* checking top-level files ... NOTE
+File
+  LICENSE
+is not mentioned in the DESCRIPTION file.
 * checking for left-over files ... OK
 * checking index information ... OK
 * checking package subdirectories ... OK
@@ -43,7 +43,6 @@ License components which are templates and need '+ file LICENSE':
 * checking foreign function calls ... OK
 * checking R code for possible problems ... NOTE
 git_stats: no visible global function definition for ‘GET’
-git_stats: no visible global function definition for ‘flush.console’
 git_stats: no visible global function definition for ‘fromJSON’
 git_stats: no visible global function definition for ‘anydate’
 git_stats : adds_per_user: no visible global function definition for
@@ -188,24 +187,34 @@ git_stats: no visible global function definition for ‘%>%’
 git_stats: no visible global function definition for ‘arrange’
 git_stats: no visible global function definition for ‘desc’
 git_stats: no visible binding for global variable ‘adds’
-git_stats: no visible global function definition for ‘head’
 git_stats: no visible binding for global variable ‘deletes’
 git_stats: no visible binding for global variable ‘commits’
 Undefined global functions or variables:
   %>% GET a adds aes anydate arrange commits d deletes desc
-  element_text flush.console fromJSON geom_line ggplot group_by head
-  summarise theme theme_bw w xlab ylab
-Consider adding
-  importFrom("utils", "flush.console", "head")
-to your NAMESPACE file.
-* checking for missing documentation entries ... WARNING
-Undocumented code objects:
-  ‘git_stats’
-All user-level objects in a package should have documentation entries.
+  element_text fromJSON geom_line ggplot group_by summarise theme
+  theme_bw w xlab ylab
+* checking Rd files ... OK
+* checking Rd metadata ... OK
+* checking Rd line widths ... OK
+* checking Rd cross-references ... OK
+* checking for missing documentation entries ... OK
+* checking for code/documentation mismatches ... OK
+* checking Rd \usage sections ... WARNING
+Undocumented arguments in documentation object 'git_stats'
+  ‘repo_name’
+
+Functions with \usage entries need to have the appropriate \alias
+entries, and all their arguments documented.
+The \usage entries must correspond to syntactically valid R code.
 See chapter ‘Writing R documentation files’ in the ‘Writing R
 Extensions’ manual.
+* checking Rd contents ... OK
+* checking for unstated dependencies in examples ... OK
 * checking examples ... NONE
+* checking for unstated dependencies in ‘tests’ ... OK
+* checking tests ... OK
+  Running ‘testthat.R’
 * checking for non-standard things in the check directory ... OK
 * checking for detritus in the temp directory ... OK
 * DONE
-Status: 2 WARNINGs, 2 NOTEs
+Status: 1 WARNING, 3 NOTEs

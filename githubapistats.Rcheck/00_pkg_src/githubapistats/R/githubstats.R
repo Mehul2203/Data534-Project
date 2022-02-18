@@ -1,16 +1,22 @@
-library(httr)
-library(jsonlite)
-library(tidyverse)
-library(patchwork)
-library(anytime)
-library(testthat)
+
 git_stats <- function(repo_name){
 
   #' Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
   #' In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
   #' deletions of the github user for the requested repository by the end user.
   #' Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
-
+  #' @param repo_name
+  #' @importFrom httr GET
+  #'
+  #' @export
+  #library(httr)
+  #library(jsonlite)
+  #library(tidyverse)
+  #library(patchwork)
+  #library(anytime)
+  #library(testthat)
+  #library(devtools)
+  #library(dplyr)
   base_url <- "https://api.github.com/repos/"
   params <- gsub(" ", "", paste(repo_name,"/stats/contributors"))
   url <- gsub(" ", "", paste(base_url,params))

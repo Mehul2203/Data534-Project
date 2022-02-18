@@ -8,6 +8,8 @@ Description: Returns the stats of user in terms of additions, commits, deletions
 License: MIT License
 Encoding: UTF-8
 LazyData: true
+Imports: httr,jsonlite,tidyverse,patchwork,anytime,devtools,dplyr,ggplot2
 Suggests: 
     testthat (>= 3.0.0)
 Config/testthat/edition: 3
+RoxygenNote: 7.1.2.9000

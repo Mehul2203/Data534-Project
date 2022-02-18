@@ -2,9 +2,7 @@
 ** using staged installation
 ** R
 ** byte-compile and prepare package for lazy loading
-Warning: package ‘jsonlite’ was built under R version 4.1.2
 ** help
-No man pages found in package  ‘githubapistats’ 
 *** installing help indices
 ** building package indices
 ** testing if installed package can be loaded from temporary location
