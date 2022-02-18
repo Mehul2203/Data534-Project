@@ -7,5 +7,21 @@ Maintainer: The package maintainer <yourself@somewhere.net>
 Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
 License: MIT License
 Encoding: UTF-8
-NeedsCompilation: no
-Packaged: 2022-02-17 03:02:22 UTC; mayukha
+LazyData: true
+Imports: 
+  httr,
+  jsonlite,
+  tidyverse,
+  anytime,
+  devtools,
+  dplyr,
+  tidyr,
+  ggplot2,
+  testthat
+Suggests: 
+    rmarkdown,
+    knitr,
+    testthat
+RoxygenNote: 7.1.2.9000
+Roxygen: list(markdown = TRUE)
+VignetteBuilder: knitr

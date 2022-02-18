@@ -2,3 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+<<<<<<< HEAD
+inst/doc
+/doc/
+/Meta/
+=======
+.ipynb_checkpoints
+/*.Rcheck/
+>>>>>>> 27bacb9fab42cc8b5a56a2a04698d974f51f2ddd
