@@ -81,6 +81,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **15th Feb** - Did Error and Exception handling for the sub-function in the main function. Did some debuugging and helped in creating main function.  
    
    * **16th Feb** - Worked on GitHub documentation and package creation. 
+   * **17th Feb** - Helped and worked on testing our package using GitHub actions. Many errors and warnings were occuring. Helped in debugging and finally it worked. 
 
 
 **Team Member 3 - Mayukha Bheemavarapu**
