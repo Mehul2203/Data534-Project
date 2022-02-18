@@ -1,32 +1,32 @@
-
+#' git_stats
+#'
+#' stats of user in terms of additions, commits, deletions for the requested repository by the end user.
+#' In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
+#' deletions of the github user for the requested repository by the end user.
+#'
+#' Parameter repo_name -> it is the repository name for which the user wants to analyze the data.
+#' @param repo_name
+#'
+#' @return jbug.kjblk
+#'
+#' @export
+#'
+#' @examples
+#' \dontrun{
+#' git_stats('numpy/numpy')
+#' }
 git_stats <- function(repo_name){
 
-  #' Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
-  #' In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
-  #' deletions of the github user for the requested repository by the end user.
-  #' Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.
-  #' @param repo_name
-  #' @description description
-  #'
-  #'
-  #' @export
-  #library(httr)
-  #library(jsonlite)
-  #library(tidyverse)
-  #library(patchwork)
-  #library(anytime)
-  #library(testthat)
-  #library(devtools)
-  #library(dplyr)
+
   base_url <- "https://api.github.com/repos/"
   params <- gsub(" ", "", paste(repo_name,"/stats/contributors"))
   url <- gsub(" ", "", paste(base_url,params))
-  res = GET(url)
+  res = httr::GET(url)
 
   if (res[['status_code']] != 200) {
     stop()}
   flush.console()
-  data = fromJSON(rawToChar(res$content))
+  data = jsonlite::fromJSON(rawToChar(res$content))
 
   loginname <- readline(prompt="Enter login name: ")
   author<-data$author
@@ -37,14 +37,10 @@ git_stats <- function(repo_name){
   index_data<-which(author$login == loginname)
   data_weeks<-data$weeks
   current_user<-data_weeks[[index_data]]
-  current_user$w<-anydate(current_user$w)
-
-
+  current_user$w<-anytime::anydate(current_user$w)
 
   adds_per_user <- function(current_user) {
-    #' Returns the stats of user in terms of additions for the requested repository by the end user.
-    #' Parameter: current_user -> the user name for which user wants to analyze the data.
-    df_adds<-current_user%>%group_by(w)%>%summarise(adds=sum(a))%>%arrange(desc(w))
+        df_adds<-current_user|>dplyr::group_by(w)|>dplyr::summarise(adds=sum(a))|>dplyr::arrange(desc(w))
 
     if (length(df_adds) == 0) {
       stop("This user has no data.")}
@@ -54,9 +50,7 @@ git_stats <- function(repo_name){
 
 
   deletes_per_user <- function(current_user) {
-    #' Returns the stats of user in terms of deletions for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to analyze the data.
-    df_deletes<-current_user%>%group_by(w)%>%summarise(deletes=sum(d))%>%arrange(desc(w))
+    df_deletes<-current_user|>dplyr::group_by(w)|>dplyr::summarise(deletes=sum(d))|>dplyr::arrange(desc(w))
     if (length(df_deletes) == 0) {
       stop("This user has no data.")}
 
@@ -64,9 +58,7 @@ git_stats <- function(repo_name){
   }
 
   commits_per_user <- function(current_user) {
-    #' Returns the stats of user in terms of commits for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to analyze the data.
-    df_commits<-current_user%>%group_by(w)%>%summarise(commits=sum(c))%>%arrange(desc(w))
+    df_commits<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c))|>dplyr::arrange(desc(w))
     if (length(df_commits) == 0) {
       stop("This user has no data.")}
 
@@ -75,70 +67,62 @@ git_stats <- function(repo_name){
 
 
 
-
   everything_per_user <- function(current_user) {
-    #' Returns the stats of user in terms of additions,deletions,commits for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to analyze the data.
-    df_everything<-current_user%>%group_by(w)%>%summarise(commits=sum(c), additions=sum(a), deletions=sum(d))%>%arrange(desc(w))
+    df_everything<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c), additions=sum(a), deletions=sum(d))|>dplyr::arrange(desc(w))
     if (length(df_everything) == 0) {
       stop("This user has no data.")}
 
     return(df_everything)
   }
+
   adds_per_user_viz<-function(current_user)
   {
-    #' This shows visualization/trends/time series plots of additions of the github user for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to look at the visualization.
     options(repr.plot.width=16, repr.plot.height=8)
-    p <- ggplot(adds_per_user(current_user), aes(x=w, y=adds)) +
-      geom_line(color="green3", size=0.8) +
-      xlab("Year")+ylab("Adds") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                     axis.title=element_text(size=19,face="bold"))
+    p <- ggplot2::ggplot(adds_per_user(current_user), ggplot2::aes(x=w, y=adds)) +
+      ggplot2::geom_line(color="green3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Adds") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                     axis.title=ggplot2::element_text(size=19,face="bold"))
     return(p)
   }
 
+
   deletes_per_user_viz<-function(current_user)
   {
-    #' This shows visualization/trends/time series plots of deletions of the github user for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to look at the visualization.
-    options(repr.plot.width=16, repr.plot.height=8)
-    p <- ggplot(deletes_per_user(current_user), aes(x=w, y=deletes)) +
-      geom_line(color="green3", size=0.8) +
-      xlab("Year")+ylab("Deletes") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                        axis.title=element_text(size=19,face="bold"))
+     options(repr.plot.width=16, repr.plot.height=8)
+    p <- ggplot2::ggplot(deletes_per_user(current_user), ggplot2::aes(x=w, y=deletes)) +
+      ggplot2::geom_line(color="green3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Deletes") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                        axis.title=ggplot2::element_text(size=19,face="bold"))
     return(p)
   }
 
   commits_per_user_viz<-function(current_user)
   {
-    #' This shows visualization/trends/time series plots of commits of the github user for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to look at the visualization.
     options(repr.plot.width=16, repr.plot.height=8)
-    p <- ggplot(commits_per_user(current_user), aes(x=w, y=commits)) +
-      geom_line(color="green3", size=0.8) +
-      xlab("Year")+ylab("Commits") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                        axis.title=element_text(size=19,face="bold"))
+    p <- ggplot2::ggplot(commits_per_user(current_user), ggplot2::aes(x=w, y=commits)) +
+      ggplot2::geom_line(color="green3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Commits") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                        axis.title=ggplot2::element_text(size=19,face="bold"))
     return(p)
   }
+
   everything_per_user_viz<-function(current_user)
   {
-    #' This shows visualization/trends/time series plots of additions,commits, deletions of the github user for the requested repository by the end user
-    #' Parameter: current_user -> the user name for which user wants to look at the visualization.
-    options(repr.plot.width=16, repr.plot.height=8)
-    pc <- ggplot(everything_per_user(current_user), aes(x=w, y=commits)) +
-      geom_line(color="magenta3", size=0.8) +
-      xlab("Year")+ylab("Commits") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                        axis.title=element_text(size=19,face="bold"))
+     options(repr.plot.width=16, repr.plot.height=8)
+    pc <- ggplot2::ggplot(everything_per_user(current_user), ggplot2::aes(x=w, y=commits)) +
+      ggplot2::geom_line(color="magenta3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Commits") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                        axis.title=ggplot2::element_text(size=19,face="bold"))
 
-    pd <- ggplot(deletes_per_user(current_user), aes(x=w, y=deletes)) +
-      geom_line(color="royalblue3", size=0.8) +
-      xlab("Year")+ylab("Deletes") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                        axis.title=element_text(size=19,face="bold"))
+    pd <- ggplot2::ggplot(deletes_per_user(current_user), ggplot2::aes(x=w, y=deletes)) +
+      ggplot2::geom_line(color="royalblue3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Deletes") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                        axis.title=ggplot2::element_text(size=19,face="bold"))
 
-    pa <- ggplot(adds_per_user(current_user), aes(x=w, y=adds)) +
-      geom_line(color="green3", size=0.8) +
-      xlab("Year")+ylab("Adds") + theme_bw() + theme(axis.text=element_text(size=16, face="bold"),
-                                                     axis.title=element_text(size=19,face="bold"))
+    pa <- ggplot2::ggplot(adds_per_user(current_user), ggplot2::aes(x=w, y=adds)) +
+      ggplot2::geom_line(color="green3", size=0.8) +
+      ggplot2::xlab("Year")+ggplot2::ylab("Adds") + ggplot2::theme_bw() + ggplot2::theme(axis.text=ggplot2::element_text(size=16, face="bold"),
+                                                     axis.title=ggplot2::element_text(size=19,face="bold"))
 
     options(repr.plot.width=13, repr.plot.height=15)
     pe <- (pa / pd / pc)
@@ -151,7 +135,7 @@ git_stats <- function(repo_name){
 
     if(user_stats_choice  == "1"){
       df<-adds_per_user(current_user)
-      df<-df%>%arrange(desc(adds))
+      df<-df|>dplyr::arrange(desc(adds))
       print("/n Here are the top dates with respect to adds")
       print(head(df))
       flush.console()
@@ -166,7 +150,7 @@ git_stats <- function(repo_name){
 
     else if(user_stats_choice == "2"){
       df<-deletes_per_user(current_user)
-      df<-df%>%arrange(desc(deletes))
+      df<-df|>dplyr::arrange(desc(deletes))
       print("/n Here are the top dates with respect to deletes")
       print(head(df))
       flush.console()
@@ -180,7 +164,7 @@ git_stats <- function(repo_name){
 
     else if(user_stats_choice == "3"){
       df<-commits_per_user(current_user)
-      df<-df%>%arrange(desc(commits))
+      df<-df|>dplyr::arrange(desc(commits))
       print("/n Here are the top dates with respect to commits")
       print(head(df))
       flush.console()
@@ -193,7 +177,7 @@ git_stats <- function(repo_name){
     }
     else if(user_stats_choice == "4"){
       df<-everything_per_user(current_user)
-      df<-df%>%arrange(desc(commits))
+      df<-df|>dplyr::arrange(desc(commits))
       print("/n Here are the top dates with respect to commits")
       print(head(df))
       flush.console()

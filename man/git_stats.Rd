@@ -2,13 +2,26 @@
 % Please edit documentation in R/githubstats.R
 \name{git_stats}
 \alias{git_stats}
-\title{Description: Returns the stats of user in terms of additions, commits, deletions for the requested repository by the end user.
-In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
-deletions of the github user for the requested repository by the end user.
-Parameter: repo_name -> it is the repository name for which the user wants to analyze the data.}
+\title{git_stats}
 \usage{
 git_stats(repo_name)
 }
+\arguments{
+\item{repo_name}{}
+}
+\value{
+jbug.kjblk
+}
 \description{
-description
+stats of user in terms of additions, commits, deletions for the requested repository by the end user.
+In addition to that it also gives the option of showing visualization/trends/time series plots of additions,commits,
+deletions of the github user for the requested repository by the end user.
+}
+\details{
+Parameter repo_name -> it is the repository name for which the user wants to analyze the data.
+}
+\examples{
+\dontrun{
+git_stats('numpy/numpy')
+}
 }
