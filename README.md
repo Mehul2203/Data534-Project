@@ -82,6 +82,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    
    * **16th Feb** - Worked on GitHub documentation and package creation. 
    * **17th Feb** - Helped and worked on testing our package using GitHub actions. Many errors and warnings were occuring. Helped in debugging and finally it worked. We all worked on Mayukha's system collaboratively.  
+   * **18th Feb** - Worked on Vignettes file and did some more modifications. 
 
 
 **Team Member 3 - Mayukha Bheemavarapu**
