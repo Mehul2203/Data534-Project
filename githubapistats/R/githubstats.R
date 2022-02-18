@@ -8,6 +8,7 @@ git_stats <- function(repo_name){
   #' @param repo_name
   #' @description description
   #'
+  #'
   #' @export
   #library(httr)
   #library(jsonlite)
