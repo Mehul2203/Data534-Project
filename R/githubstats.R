@@ -27,8 +27,8 @@ git_stats <- function(repo_name){
     stop()}
   flush.console()
   data = jsonlite::fromJSON(rawToChar(res$content))
-
-  loginname <- readline(prompt="Enter login name: ")
+  loginname<-'mattip'
+  #loginname <- readline(prompt="Enter login name: ")
   author<-data$author
 
   if ((loginname %in%  author$login) != TRUE) {
@@ -131,7 +131,8 @@ git_stats <- function(repo_name){
   }
 
   while(1){
-    user_stats_choice <- readline(prompt="Enter which stats you are looking for the user(type from the following options - \n 1. Additions \n 2. Deletions \n 3. Commits \n 4.All \n 5. None): \n ")
+    user_stats_choice<-'1'
+    #user_stats_choice <- readline(prompt="Enter which stats you are looking for the user(type from the following options - \n 1. Additions \n 2. Deletions \n 3. Commits \n 4.All \n 5. None): \n ")
 
     if(user_stats_choice  == "1"){
       df<-adds_per_user(current_user)
@@ -139,8 +140,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to adds")
       print(head(df))
       flush.console()
-
-      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: ")
+      user_viz_choice<-"yes"
+      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: ")
       if(user_viz_choice  == "yes"){
         print(adds_per_user_viz(current_user))
         flush.console()
@@ -154,7 +155,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to deletes")
       print(head(df))
       flush.console()
-      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
+      user_viz_choice<-"yes"
+      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
         print(deletes_per_user_viz(current_user))
         flush.console()
@@ -168,7 +170,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to commits")
       print(head(df))
       flush.console()
-      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
+      user_viz_choice<-"yes"
+      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
         print(commits_per_user_viz(current_user))
         flush.console()
@@ -181,7 +184,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to commits")
       print(head(df))
       flush.console()
-      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
+      user_viz_choice<-"yes"
+      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
         print(everything_per_user_viz(current_user))
         flush.console()
