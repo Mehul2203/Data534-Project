@@ -18,3 +18,4 @@ knitr::opts_chunk$set(
 library(githubapistats)
 git_stats('numpy/numpy')
 ```
+# GitHub Stats
