@@ -1,13 +1,4 @@
-importFrom("utils", "flush.console", "head")
 exportPattern("^[[:alpha:]]+")
 
-export(git_stats)
-import(httr)
-import(jsonlite)
-import(tidyverse)
-import(anytime)
-import(testthat)
-import(devtools)
-import(dplyr)
 
 
