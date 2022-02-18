@@ -73,21 +73,25 @@ This is the git hub repo for our project based on Github API R wrapper package i
 
 **Team Member 2 - Mehul Bhargava**
     
-   * **13th Feb** - 
+   * **13th Feb** - Worked to search for a good API, accessing it, analyzed itand finalizing it. Tried analyzing some other APIs given on the project documentation. Selected which particular API for GitHub to be selected. 
    
-   * **14th Feb** - 
+   * **14th Feb** - Coding for analysis of data. Extracting the data from the API in a proper format and converted into dataframes. helped creating the functions for the user requirements for commits and a combined functions. Created functions for visualizattions for commits for each user and for a combined visualization. Did faceting for the combined visualization. 
    
-   * **15th Feb** - 
+   * **15th Feb** - Did Error and Exception handling for the sub-function in the main function. Did some debuugging and helped in creating main function.  
    
-   * **16th Feb** -
+   * **16th Feb** - Worked on GitHub documentation and package creation. 
 
 
 **Team Member 3 - Mayukha Bheemavarapu**
 
-   * **13th Feb** - 
+   * **13th Feb** - Started searching for possible options of API ad have shortlisted the GitHub API. Brainstormed on how to execute the project
    
-   * **14th Feb** - 
+   * **14th Feb** - Extracted the data from API and created functions for adds,deletes and commits per user along with visualisations. Ran the entire script on a test repo
    
-   * **15th Feb** - 
+   * **15th Feb** - Made the script dynamic and it can incorporate any repo. Performed exception handling and documented parts of the code
    
-   * **16th Feb** -
+   * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
+
+
+[![CircleCI](https://circleci.com/gh/navdeep94/Data534-Project/tree/main.svg?style=svg)](https://circleci.com/gh/navdeep94/Data534-Project/tree/main)
+ 
