@@ -10,7 +10,7 @@ git_stats(repo_name)
 \item{repo_name}{A repo}
 }
 \value{
-jbug.kjblk
+dataframe and visualization of thr above mentioned based on user input
 }
 \description{
 stats of user in terms of additions, commits, deletions for the requested repository by the end user.
