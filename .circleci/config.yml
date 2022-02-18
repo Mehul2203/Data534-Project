@@ -1,4 +1,4 @@
-version: 2
+version: 3.4
 jobs:
   build:
     docker:
@@ -14,3 +14,6 @@ jobs:
       - run:
           name: Check package
           command: R CMD check *tar.gz
+dependencies:
+  pre:
+    - curl -LO https://symantec.tbs-certificats.com/SymantecSSG4.crt
