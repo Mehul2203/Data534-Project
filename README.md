@@ -70,6 +70,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **15th Feb** - Worked on the common main function for user inputs and wrapping all the other functions into it, also worked on the docstring documentation of those functions
    
    * **16th Feb** - Worked on the Git Documentation of the R wrapper package
+   * **17th Feb** - Worked on package testing using Circle CI and later on Github Action, after many failures we were able to run it successfully involving many changes in the configuration and even code changes.
 
 **Team Member 2 - Mehul Bhargava**
     
