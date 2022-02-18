@@ -32,5 +32,5 @@ library(githubapistats)
 6. Press 'yes' to look at the visualization as well and 'no' if otherwise.      
 
 ```{r setup}
-knitr::include_graphics(/Screenshots/screenshot.png)
+knitr::include_graphics(Screenshots/screenshot.png)
 ```
