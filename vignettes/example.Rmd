@@ -18,8 +18,15 @@ knitr::opts_chunk$set(
 library(githubapistats)
 git_stats('numpy/numpy')
 ```
-# GitHub Stats   
+# GitHub Stats     
 ### The package is developed and deployed for the user to interact with it.       
-### User can use various functions to access the information for a particular repository. 
-### Within that repository the user has to select a userId for which they want to analyze the statistics. 
-### Several options are provided for statistics and visualizations can also be viewed. 
+### User can use various functions to access the information for a particular repository.     
+### Within that repository the user has to select a userId for which they want to analyze the statistics.     
+### Several options are provided for statistics and visualizations can also be viewed.     
+### The following steps should bbe followed by the user:   
+1. Install the package - 'githubapistats' using the command install.packages("githubapistats").    
+2. Load the package- library(githubapistats).         
+3. Call the function 'git_stats' with repo name as the parameter. Ex: git_stats('numpy/numpy').   
+4. Enter the login name for which you want to get the stats Ex: 'mattip'.    
+5. Enter '1' to get Additions, '2' to get Deletions, '3' for Commits, '4' to get data for all the three (Additions, Deletions, Commits) and '5' for None.    
+6. Press 'yes' to look at the visualization as well and 'no' if otherwise.      
