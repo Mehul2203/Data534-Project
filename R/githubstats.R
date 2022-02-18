@@ -153,8 +153,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to deletes")
       print(head(df))
       flush.console()
-      #user_viz_choice<-"yes"
-      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
+      user_viz_choice<-"yes"
+      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
         print(deletes_per_user_viz(current_user))
         flush.console()
