@@ -93,5 +93,6 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
 
 
-[![CircleCI](https://circleci.com/gh/navdeep94/Data534-Project/tree/main.svg?style=svg)](https://circleci.com/gh/navdeep94/Data534-Project/tree/main)
+![image](https://user-images.githubusercontent.com/87165579/154630161-f077e7e5-c1fe-4450-a015-6fc8b2db5e33.png)
+
  
