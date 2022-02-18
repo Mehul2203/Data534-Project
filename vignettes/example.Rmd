@@ -23,7 +23,7 @@ git_stats('numpy/numpy')
 ### User can use various functions to access the information for a particular repository.     
 ### Within that repository the user has to select a userId for which they want to analyze the statistics.     
 ### Several options are provided for statistics and visualizations can also be viewed.     
-### The following steps should bbe followed by the user:   
+### The following steps should be followed by the user:   
 1. Install the package - 'githubapistats' using the command install.packages("githubapistats").    
 2. Load the package- library(githubapistats).         
 3. Call the function 'git_stats' with repo name as the parameter. Ex: git_stats('numpy/numpy').   
