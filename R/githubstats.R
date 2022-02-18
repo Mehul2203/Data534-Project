@@ -5,7 +5,7 @@
 #' deletions of the github user for the requested repository by the end user.
 #' @param repo_name A repo
 #'
-#' @return jbug.kjblk
+#' @return dataframe and visualization of thr above mentioned based on user input
 #'
 #' @export
 #'
@@ -138,8 +138,8 @@ git_stats <- function(repo_name){
       print("/n Here are the top dates with respect to adds")
       print(head(df))
       flush.console()
-      user_viz_choice<-"yes"
-      #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: ")
+      #user_viz_choice<-"yes"
+      user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: ")
       if(user_viz_choice  == "yes"){
         print(adds_per_user_viz(current_user))
         flush.console()
