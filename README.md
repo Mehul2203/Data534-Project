@@ -95,6 +95,8 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **15th Feb** - Made the script dynamic and it can incorporate any repo. Performed exception handling and documented parts of the code
    
    * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
+   * **17th Feb** - Debugged the issues we were facing and did continuous integration with github actions
+   * **18th Feb** - Created test cases and pushed the final code to git
 
 
  ![image](https://user-images.githubusercontent.com/87165579/154776185-b6535ede-a441-40f3-b4e0-5f5a78b61a4e.png)
