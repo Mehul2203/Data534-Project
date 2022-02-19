@@ -183,7 +183,7 @@ everything_per_user_viz<-function(current_user)
                                                                                        axis.title=ggplot2::element_text(size=19,face="bold"))
 
   options(repr.plot.width=13, repr.plot.height=15)
-  pe <- (pa / pd / pc)
+  pe <- ggpubr::ggarrange(pc,pd,pa)
 
   return(pe)
 }

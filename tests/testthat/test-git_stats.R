@@ -40,4 +40,6 @@ test_that('data types correct', {
 test_that('data types correct', {
   expect_is(commits_per_user_viz(current_user),'gg')
 })
-
+test_that('data types correct', {
+expect_is(everything_per_user_viz(current_user),'gg')
+})
