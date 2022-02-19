@@ -20,5 +20,24 @@ data_weeks<-data$weeks
 current_user<-data_weeks[[index_data]]
 current_user$w<-anytime::anydate(current_user$w)
 test_that('data types correct', {
+  expect_is(adds_per_user(current_user),'data.frame')
+})
+test_that('data types correct', {
+  expect_is(deletes_per_user(current_user),'data.frame')
+})
+test_that('data types correct', {
   expect_is(commits_per_user(current_user),'data.frame')
 })
+test_that('data types correct', {
+  expect_is(everything_per_user(current_user),'data.frame')
+})
+test_that('data types correct', {
+  expect_is(adds_per_user_viz(current_user),'gg')
+})
+test_that('data types correct', {
+  expect_is(deletes_per_user_viz(current_user),'gg')
+})
+test_that('data types correct', {
+  expect_is(commits_per_user_viz(current_user),'gg')
+})
+
