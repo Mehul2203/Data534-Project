@@ -11,12 +11,13 @@
 #' \dontrun{
 #' adds_per_user('mattip')
 #' }
+#this function is taking the userID and returns the additions for that user. 
 adds_per_user <- function(current_user) {
-  df_adds<-current_user|>dplyr::group_by(w)|>dplyr::summarise(adds=sum(a))|>dplyr::arrange(desc(w))
-
+  df_adds<-current_user|>dplyr::group_by(w)|>dplyr::summarise(adds=sum(a))|>dplyr::arrange(desc(w))    #summarizing and arranging in descending order. 
+  
   if (length(df_adds) == 0) {
     stop("This user has no data.")}
-  return(df_adds)
+  return(df_adds)    #returns a dataframe
 }
 
 #' deletes_per_user
@@ -32,12 +33,13 @@ adds_per_user <- function(current_user) {
 #' \dontrun{
 #' deletes_per_user('mattip')
 #' }
+#this function is taking the userID and returns the deletions for that user. 
 deletes_per_user <- function(current_user) {
-  df_deletes<-current_user|>dplyr::group_by(w)|>dplyr::summarise(deletes=sum(d))|>dplyr::arrange(desc(w))
+  df_deletes<-current_user|>dplyr::group_by(w)|>dplyr::summarise(deletes=sum(d))|>dplyr::arrange(desc(w))  #summarizing and arranging in descending order. 
   if (length(df_deletes) == 0) {
     stop("This user has no data.")}
 
-  return(df_deletes)
+  return(df_deletes)    #returns a dataframe
 }
 
 #' commits_per_user
@@ -53,12 +55,13 @@ deletes_per_user <- function(current_user) {
 #' \dontrun{
 #' commits_per_user('mattip')
 #' }
+#this function is taking the userID and returns the commits for that user. 
 commits_per_user <- function(current_user) {
-  df_commits<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c))|>dplyr::arrange(desc(w))
+  df_commits<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c))|>dplyr::arrange(desc(w))    #summarizing and arranging in descending order.
   if (length(df_commits) == 0) {
     stop("This user has no data.")}
 
-  return(df_commits)
+  return(df_commits)    #returns a dataframe
 }
 
 #' everything_per_user
@@ -74,12 +77,13 @@ commits_per_user <- function(current_user) {
 #' \dontrun{
 #' everything_per_user('mattip')
 #' }
+#this function is taking the userID and returns the commits, additions and deletions for that user. 
 everything_per_user <- function(current_user) {
-  df_everything<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c), additions=sum(a), deletions=sum(d))|>dplyr::arrange(desc(w))
+  df_everything<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c), additions=sum(a), deletions=sum(d))|>dplyr::arrange(desc(w))   #summarizing and arranging in descending order.
   if (length(df_everything) == 0) {
     stop("This user has no data.")}
 
-  return(df_everything)
+  return(df_everything)       #returns a dataframe
 }
 
 #' adds_per_user_viz
