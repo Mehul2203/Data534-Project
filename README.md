@@ -97,6 +97,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **16th Feb** - Created an R package encapsulating the scripts from above. Added the contributing, code of conduct and user_guide files
 
 
-[![R-CMD-check](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml/badge.svg)](https://github.com/navdeep94/Data534-Project/actions/workflows/check-release.yaml)
+ ![image](https://user-images.githubusercontent.com/87165579/154776185-b6535ede-a441-40f3-b4e0-5f5a78b61a4e.png)
+ 
+ **Note**: **Again to emphasise, it's perfectly running for both MAC, Windows and the latest version of Ubuntu as well. However, we are not able to figure out the exact reason for the ubuntu latest oldref version.**
 
- ![image](https://user-images.githubusercontent.com/87165579/154769140-195432db-ad62-413a-99e5-921784a1fa27.png)
