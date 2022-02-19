@@ -71,7 +71,7 @@ This is the git hub repo for our project based on Github API R wrapper package i
    
    * **16th Feb** - Worked on the Git Documentation of the R wrapper package
    * **17th Feb** - Worked on package testing using Circle CI and later on Github Action, after many failures we were able to run it successfully involving many changes in the configuration and even code changes.
-   * **18th Feb** - Worked on rebuilding the package locally after making the changes by the vignette by other team mate and pushing it to github.
+   * **18th Feb** - Worked on rebuilding the package locally after making the changes by the vignette by other team mate and pushing it to github, also including unit testing and pushing it on github after fixing the errors in the code for the visualizations.
 
 **Team Member 2 - Mehul Bhargava**
     
@@ -82,8 +82,8 @@ This is the git hub repo for our project based on Github API R wrapper package i
    * **15th Feb** - Did Error and Exception handling for the sub-function in the main function. Did some debuugging and helped in creating main function.  
    
    * **16th Feb** - Worked on GitHub documentation and package creation. 
-   * **17th Feb** - Helped and worked on testing our package using GitHub actions. Many errors and warnings were occuring. Helped in debugging and finally it worked. We all worked on Mayukha's system collaboratively.  
-   * **18th Feb** - Worked on Vignettes file and did some more modifications. 
+   * **17th Feb** - Helped and worked on testing our package using GitHub actions. Helped in debugging and finally it worked.   
+   * **18th Feb** - Worked on Vignettes file and did some more modifications. Added comments in the R code file. 
 
 
 **Team Member 3 - Mayukha Bheemavarapu**
@@ -101,5 +101,5 @@ This is the git hub repo for our project based on Github API R wrapper package i
 
  ![image](https://user-images.githubusercontent.com/87165579/154776185-b6535ede-a441-40f3-b4e0-5f5a78b61a4e.png)
  
- **Note**: **Again to emphasise, it's perfectly running for both MAC, Windows and the latest version of Ubuntu as well. However, we are not able to figure out the exact reason for the ubuntu latest oldref version.**
+ **Note**: **Again to emphasise, it's perfectly running for both MAC, Windows and the latest version of Ubuntu as well. However, we are not able to figure out the exact reason for the ubuntu latest oldref version. Another important thing, our package originally was developed to take user friendly input and create outputs, but it was failing for the Github Action testing, so we changed the code with manual parameters and values.**
 

@@ -12,11 +12,11 @@
 #' adds_per_user('mattip')
 #' }
 adds_per_user <- function(current_user) {
-  df_adds<-current_user|>dplyr::group_by(w)|>dplyr::summarise(adds=sum(a))|>dplyr::arrange(desc(w))
-
+  df_adds<-current_user|>dplyr::group_by(w)|>dplyr::summarise(adds=sum(a))|>dplyr::arrange(desc(w))    
+  
   if (length(df_adds) == 0) {
     stop("This user has no data.")}
-  return(df_adds)
+  return(df_adds)    
 }
 
 #' deletes_per_user
@@ -33,11 +33,11 @@ adds_per_user <- function(current_user) {
 #' deletes_per_user('mattip')
 #' }
 deletes_per_user <- function(current_user) {
-  df_deletes<-current_user|>dplyr::group_by(w)|>dplyr::summarise(deletes=sum(d))|>dplyr::arrange(desc(w))
+  df_deletes<-current_user|>dplyr::group_by(w)|>dplyr::summarise(deletes=sum(d))|>dplyr::arrange(desc(w))  
   if (length(df_deletes) == 0) {
     stop("This user has no data.")}
 
-  return(df_deletes)
+  return(df_deletes)    
 }
 
 #' commits_per_user
@@ -54,11 +54,11 @@ deletes_per_user <- function(current_user) {
 #' commits_per_user('mattip')
 #' }
 commits_per_user <- function(current_user) {
-  df_commits<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c))|>dplyr::arrange(desc(w))
+  df_commits<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c))|>dplyr::arrange(desc(w))    
   if (length(df_commits) == 0) {
     stop("This user has no data.")}
 
-  return(df_commits)
+  return(df_commits)    
 }
 
 #' everything_per_user
@@ -75,11 +75,11 @@ commits_per_user <- function(current_user) {
 #' everything_per_user('mattip')
 #' }
 everything_per_user <- function(current_user) {
-  df_everything<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c), additions=sum(a), deletions=sum(d))|>dplyr::arrange(desc(w))
+  df_everything<-current_user|>dplyr::group_by(w)|>dplyr::summarise(commits=sum(c), additions=sum(a), deletions=sum(d))|>dplyr::arrange(desc(w))   
   if (length(df_everything) == 0) {
     stop("This user has no data.")}
 
-  return(df_everything)
+  return(df_everything)     
 }
 
 #' adds_per_user_viz
@@ -203,36 +203,36 @@ everything_per_user_viz<-function(current_user)
 #' \dontrun{
 #' git_stats('numpy/numpy')
 #' }
-git_stats <- function(repo_name){
+git_stats <- function(repo_name){     
 
-
-  base_url <- "https://api.github.com/repos/"
-  params <- gsub(" ", "", paste(repo_name,"/stats/contributors"))
+  #This is the base URL. 
+  base_url <- "https://api.github.com/repos/"     
+  params <- gsub(" ", "", paste(repo_name,"/stats/contributors"))  #These are the parameters.
   url <- gsub(" ", "", paste(base_url,params))
-  res = httr::GET(url)
+  res = httr::GET(url)     
 
-  if (res[['status_code']] != 200) {
+  if (res[['status_code']] != 200) {     #checking the status code, after the API call. 
     stop()}
-  flush.console()
-  data = jsonlite::fromJSON(rawToChar(res$content))
-  loginname<-'mattip'
+  flush.console()                       
+  data = jsonlite::fromJSON(rawToChar(res$content))  #filtering the data, for a specified userId. 
+  loginname<-'mattip'                                #This is a sample login name. 
   #loginname <- readline(prompt="Enter login name: ")
   author<-data$author
 
-  if ((loginname %in%  author$login) != TRUE) {
+  if ((loginname %in%  author$login) != TRUE) {           #Checking if the login name exists in the dataframe. 
     stop("This user login name doesn't exist.")}
 
   index_data<-which(author$login == loginname)
-  data_weeks<-data$weeks
+  data_weeks<-data$weeks                                 
   current_user<-data_weeks[[index_data]]
   current_user$w<-anytime::anydate(current_user$w)
 
 
   while(1){
-    user_stats_choice<-'1'
+    user_stats_choice<-'1'                 #prompting the user to select the required metric. 
     #user_stats_choice <- readline(prompt="Enter which stats you are looking for the user(type from the following options - \n 1. Additions \n 2. Deletions \n 3. Commits \n 4.All \n 5. None): \n ")
-
-    if(user_stats_choice  == "1"){
+    #Creating if-else conditions for user input. 
+    if(user_stats_choice  == "1"){        #If user selects 1, it will show the additions data for the selected userID. 
       df<-adds_per_user(current_user)
       df<-df|>dplyr::arrange(desc(adds))
       print("/n Here are the top dates with respect to adds")
@@ -240,14 +240,14 @@ git_stats <- function(repo_name){
       flush.console()
       #user_viz_choice<-"yes"
       user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: ")
-      if(user_viz_choice  == "yes"){
-        print(adds_per_user_viz(current_user))
+      if(user_viz_choice  == "yes"){                         #asks user to view visualization or not. 
+        print(adds_per_user_viz(current_user))               #returns visualization if 'yes' is selected. 
         flush.console()
       }
       break;
     }
 
-    else if(user_stats_choice == "2"){
+    else if(user_stats_choice == "2"){    #If user selects 2, it will show the deletions data for the selected userID.
       df<-deletes_per_user(current_user)
       df<-df|>dplyr::arrange(desc(deletes))
       print("/n Here are the top dates with respect to deletes")
@@ -256,13 +256,13 @@ git_stats <- function(repo_name){
       user_viz_choice<-"yes"
       #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
-        print(deletes_per_user_viz(current_user))
-        flush.console()
-      }
+        print(deletes_per_user_viz(current_user))            #asks user to view visualization or not. 
+        flush.console()                                      #returns visualization if 'yes' is selected.   
+      }                                           
       break;
     }
 
-    else if(user_stats_choice == "3"){
+    else if(user_stats_choice == "3"){       #If user selects 3, it will show the commits data for the selected userID.
       df<-commits_per_user(current_user)
       df<-df|>dplyr::arrange(desc(commits))
       print("/n Here are the top dates with respect to commits")
@@ -271,12 +271,12 @@ git_stats <- function(repo_name){
       user_viz_choice<-"yes"
       #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
-        print(commits_per_user_viz(current_user))
-        flush.console()
+        print(commits_per_user_viz(current_user))           #asks user to view visualization or not. 
+        flush.console()                                     #returns visualization if 'yes' is selected. 
       }
       break;
     }
-    else if(user_stats_choice == "4"){
+    else if(user_stats_choice == "4"){         #If user selects 4, it will show the additions, deletions, & commits data for the selected userID.
       df<-everything_per_user(current_user)
       df<-df|>dplyr::arrange(desc(commits))
       print("/n Here are the top dates with respect to commits")
@@ -285,12 +285,12 @@ git_stats <- function(repo_name){
       user_viz_choice<-"yes"
       #user_viz_choice <- readline(prompt="\n Do you want to look at the timeseries visualization for this user? \n yes \n no: \n")
       if(user_viz_choice  == "yes"){
-        print(everything_per_user_viz(current_user))
-        flush.console()
+        print(everything_per_user_viz(current_user))                #asks user to view visualization or not. 
+        flush.console()                                             #returns visualization if 'yes' is selected. 
       }
       break;
     }
-    else if(user_stats_choice == "5") {
+    else if(user_stats_choice == "5") {   #returns nothing for this option. 
       break; }
     else {
       print("\n Invalid Input \n")
